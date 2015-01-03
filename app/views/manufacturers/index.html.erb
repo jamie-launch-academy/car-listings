@@ -4,7 +4,7 @@
 
 <TABLE>
   <TR>
-    <TD><strong>Manufacturer</TD>
+    <TD><strong>Manufacturer | </TD>
     <TD><strong>Country</TD>
   </TR>
   <% @manufacturers.each do |manufacturer| %>
@@ -14,3 +14,5 @@
     </TR>
   <% end %>
 </TABLE>
+
+<p><%= link_to "Back", root_path %></p>

@@ -1,0 +1,37 @@
+<%= form_for @car do |f| %>
+<TABLE>
+  <TR>
+    <div>
+      <TD><%= f.label :manufacturer_id %></TD>
+      <TD><%= f.select :manufacturer_id, options_for_select(@manufacturers) %></TD>
+    </div>
+  </TR>
+  <TR>
+    <div>
+      <TD><%= f.label :color %></TD>
+      <TD><%= f.text_field :color %></TD>
+    </div>
+  </TR>
+  <TR>
+    <div>
+      <TD><%= f.label :year %></TD>
+      <TD><%= f.select :year, options_for_select(1920..(Time.now.year.to_i + 1)) %><TD>
+    </div>
+  </TR>
+  <TR>
+    <div>
+      <TD><%= f.label :mileage %></TD>
+      <TD><%= f.text_field :mileage %></TD>
+    </div>
+  </TR>
+  <TR>
+    <div>
+      <TD><%= f.label :description %></TD>
+      <TD><%= f.text_area :description %></TD>
+    </div>
+  </TR>
+  <TR>
+    <TD><%= f.submit "Submit Car" %></TD>
+  </TR>
+  <% end %>
+</TABLE>

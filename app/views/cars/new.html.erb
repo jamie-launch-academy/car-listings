@@ -1,0 +1,10 @@
+<% if @car.errors.any? %>
+  <%  @car.errors.full_messages.each do |msg| %>
+    <li>  <%= msg %>  </li>
+    <% end %>
+<% end %>
+
+<h2>Fill out the form below to add a car</h2>
+
+<%= render "new_car_form" %>
+<%= link_to "Back", cars_path %>
