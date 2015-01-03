@@ -1,8 +1,13 @@
 <h2> All Manufacturers </h2>
 
+<br><%= link_to 'Home', root_path %> </br>
 <%= link_to 'Add New Manufacturer', new_manufacturer_path(@manufacturer) %>
 
-<% @manufacturers.each do |manufacturer| %>
-  <div><%= manufacturer.name %></div>
-  <div><%= manufacturer.country %></div>
-<% end  %>
+<p>
+  <% @manufacturers.each do |manufacturer| %>
+    <p>
+      <div><%= manufacturer.name %></div>
+      <div><%= manufacturer.country %></div>
+    </p>
+  <% end %>
+</p>

@@ -11,8 +11,8 @@ class ManufacturersController < ApplicationController
     @manufacturer = Manufacturer.new(manufacturer_params)
 
     if @manufacturer.save
-     redirect_to manufacturer_path(@manufacturer)
      flash[:notice] = "Your manufacturer has been successfully added."
+     redirect_to manufacturers_path
     else
      render :new
     end
