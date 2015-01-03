@@ -10,8 +10,8 @@
 
   <br>
     <%= link_to 'Home', root_path %> |
-    <%= link_to 'Add New Manufacturer', new_manufacturer_path(@manufacturer) %> |
-    <%= link_to 'Add New Car' %>
+    <%= link_to 'View Manufacturers', manufacturers_path(@manufacturer) %> |
+    <%= link_to 'View Cars' %>
   </br>
 
   <% flash.each do |name, msg| %>

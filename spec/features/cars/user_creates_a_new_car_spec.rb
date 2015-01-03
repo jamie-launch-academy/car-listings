@@ -15,8 +15,10 @@ feature "User adds a new car listing", %q(
   [ ] Upon successfully creating a car, I am redirected back to the index of cars.
 
   ) do
-    context "User creates new car listing"
-      scenario ""
+    context "User successfully creates new car listing"
 
+      scenario "user fills out form", focus: true do
+
+      end
 
   end
