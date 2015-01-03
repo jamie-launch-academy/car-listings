@@ -7,6 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <br>
+    <%= link_to 'Home', root_path %> |
+    <%= link_to 'Add New Manufacturer', new_manufacturer_path(@manufacturer) %> |
+    <%= link_to 'Add New Car' %>
+  </br>
+
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: "alert alert-info" %>
   <% end %>
