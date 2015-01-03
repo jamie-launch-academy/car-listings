@@ -13,9 +13,7 @@ feature "A user saves a manufacturers information", %q(
 ) do
 
   scenario "user successfully adds manufacturer information" do
-    visit root_path
-    click_link "View Manufacturers"
-    click_link "Add New Manufacturer"
+    visit new_manufacturer_path
 
     expect(page).to have_content "Fill out the form below to add a manufacturer"
     fill_in "Name", with: "Ford"
@@ -28,9 +26,7 @@ feature "A user saves a manufacturers information", %q(
   end
 
   scenario "user attempts to add blank manufacturer field" do
-    visit root_path
-    click_link "View Manufacturers"
-    click_link "Add New Manufacturer"
+    visit new_manufacturer_path
 
     expect(page).to have_content "Fill out the form below to add a manufacturer"
     fill_in "Name", with: "Ford"
@@ -44,17 +40,16 @@ feature "A user saves a manufacturers information", %q(
   end
 
   scenario "user attempts to add duplicate manufacturer name" do
-    visit root_path
-    click_link "View Manufacturers"
+    visit manufacturers_path
 
     2.times do
-      click_link "Add New Manufacturer"
+      visit new_manufacturer_path
       expect(page).to have_content "Fill out the form below to add a manufacturer"
       fill_in "Name", with: "Ford"
       fill_in "Country", with: "USA"
       click_button "Submit Manufacturer"
     end
-    
+
     expect(page).to have_content "Manufacturer name has already been used"
   end
 end

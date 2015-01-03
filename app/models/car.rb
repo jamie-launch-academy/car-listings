@@ -5,14 +5,14 @@ class Car < ActiveRecord::Base
     presence: true
 
   validates :color,
-  presence: true,
-  format: { with: /\A[a-zA-Z]+\z/ }
+    presence: true,
+    format: { with: /\A[a-zA-Z]+\z/ }
 
   validates :year,
-  presence: true
+    presence: true
 
   validates :mileage,
-  presence: true,
-  numericality: { only_integer: true,
-  message: "must be numerical" }
+    presence: true,
+    numericality: { only_integer: true,
+    message: "must be numerical" }
 end
